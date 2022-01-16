@@ -48,6 +48,17 @@ export default {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
+  // extend routes
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'blog2',
+        path: '/asd',
+        component: resolve(__dirname, 'pages/blog.vue')
+      })
+    }
+  },
+
 
   /*
   ** Build configuration
