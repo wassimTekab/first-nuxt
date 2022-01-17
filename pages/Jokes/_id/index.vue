@@ -30,6 +30,7 @@ export default {
       );
 
       this.joke = res.data.joke;
+      console.log(this.joke)
     } catch (err) {
       console.log(err);
     }

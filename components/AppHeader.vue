@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <nav class="header">
     <h1 class="title">Dad Jokes</h1>
     <ul>
       <li>
@@ -11,8 +11,11 @@
       <li>
         <nuxt-link to="/about">About</nuxt-link>
       </li>
+      <li>
+        <nuxt-link to="/blog">Blog</nuxt-link>
+      </li>
     </ul>
-  </header>
+  </nav>
 </template>
 
 <script>

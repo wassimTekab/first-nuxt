@@ -1,0 +1,15 @@
+export default {
+    async asyncData({$content, params}) {
+      const page = await $content('articles/some-page').fetch()
+
+      return {
+        page
+      }
+    },
+    head() {
+      // remember page is in function asyncData and it had a key title
+      return {
+        title: 'Articles: ' + this.$data.page.title
+      }
+    }
+}

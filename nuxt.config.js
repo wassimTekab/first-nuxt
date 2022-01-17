@@ -7,7 +7,8 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    titleTemplate:'%s - global title',
+    title: pkg.name,// default title
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,18 +22,22 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'red' },
+  // loading:"~/componets/LoadingBar.vue" if we want to create custom progress bar
 
   /*
   ** Global CSS
   */
   css: [
+    '@/assets/styles/index.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: "~/plugins/hello.js", mode: "server" },
+    // { src: "~/plugins/hello.js", mode: "client" }
   ],
 
   /*
@@ -58,6 +63,12 @@ export default {
       })
     }
   },
+  //midllewares
+  serverMiddleware:[
+    // "middlewaare", // node module
+    '~/middleware/logger.js',// global middleware
+    { path:'/blog',handler:'~/middleware/logger.js'}
+  ],
 
 
   /*
